@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>What's for Dinner?</title>
+<meta charset=utf-8 />
+</head>
+<body>
+<h1>What's for Dinner?</h1>
+
+<%= yield %>
+
+<p>Add something new:</p>
+<form action="/dinner/create" method="POST">
+  <input type="text" name="text" id="text">
+  <input type="submit" value="Add Dinner"/>
+</form>
+
+<p>See <a href="/dinners">all</a> your dinners.</p>
+
+<% if logged_in? %>
+    <a href="/logout">Log out</a>
+<% else %>
+    <a href="/login">Log in</a>
+<% end %>
+</body>
+</html>
+

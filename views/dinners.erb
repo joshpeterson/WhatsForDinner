@@ -1,0 +1,17 @@
+<h2>All Dinners:</h2>
+<% unless @dinners.empty? %>
+<ul>
+<% @dinners.each do |dinner| %>
+<li>
+<%= dinner.text %> (<a href="/dinner/<%= dinner.id %>/delete">Delete this dinner</a>)
+</li>
+<% end %>
+</ul>
+<% else %>
+<p>No Dinners! - Why not add one?</p>
+<form action="/dinner/create" method="POST">
+  <input type="text" name="text" id="text">
+  <input type="submit" value="Add Dinner"/>
+</form>
+<% end %>
+

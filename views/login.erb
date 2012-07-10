@@ -1,0 +1,16 @@
+<script type="text/javascript">
+function googleLogin()
+{
+  document.forms["login"].elements["openid_identifier"].value = "https://www.google.com/accounts/o8/id";
+  document.forms["login"].submit();
+}
+</script>
+
+<p><a href="javascript: googleLogin()">Log in with Google</a></p>
+<form name="login" class="openid_login" method="post" accept-charset="UTF-8" action='/login/openid'>
+  <label for="openid_identifier">Log in with OpenID:</label>
+  <input type="text" name="openid_identifier" style="background: url(http://openid.net/images/login-bg.gif) no-repeat #FFF 5px; padding-left: 25px;"/>    
+  <input type="submit" value="Login" />
+</form>
+<p><a href="http://openid.net/get/">What is OpenID?</a></p>
+

@@ -1,0 +1,8 @@
+<h2><%= @dinner.text %><h2>
+<h3>Are you sure you want to delete this dinner?</h3>
+<form action="/dinner/<%= @dinner.id %>" method="post">
+<input type="hidden" name="_method" value="delete" />
+<input type="submit" value="Delete">
+ or <a href="/dinners">Cancel</a>
+</form>
+
