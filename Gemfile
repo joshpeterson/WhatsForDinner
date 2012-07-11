@@ -5,5 +5,7 @@ gem 'pg'
 gem 'dm-postgres-adapter'
 gem 'sanitize'
 gem 'ruby-openid'
-gem 'sqlite3-ruby'
-gem 'dm-sqlite-adapter'
+group :development do
+    gem 'sqlite3-ruby'
+    gem 'dm-sqlite-adapter'
+end
