@@ -5,25 +5,25 @@ require 'openid'
 require 'openid/store/filesystem'
 require 'sanitize'
 
-#DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
-#
-#class Dinner
-#  include DataMapper::Resource  
-#
-#  property :id,           Serial
-#  property :text,         String
-#
-#  belongs_to :user
-#end
-#
-#class User
-#  include DataMapper::Resource
-#
-#  property :id,         Serial
-#  property :openid,     Text
-#
-#  has n, :dinners
-#end
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
+
+class Dinner
+  include DataMapper::Resource  
+
+  property :id,           Serial
+  property :text,         String
+
+  belongs_to :user
+end
+
+class User
+  include DataMapper::Resource
+
+  property :id,         Serial
+  property :openid,     Text
+
+  has n, :dinners
+end
 
 enable :sessions 
 
@@ -172,4 +172,4 @@ def add_dinner_for_user(user, dinner)
     end
 end
 
-#DataMapper.auto_upgrade!
+DataMapper.auto_upgrade!
