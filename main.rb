@@ -25,6 +25,8 @@ class User
   has n, :dinners
 end
 
+DataMapper.finalize
+
 enable :sessions 
 
 get '/' do
