@@ -34,6 +34,9 @@ get '/' do
     if !dinners.nil?
         dinners = dinners.shuffle
         @dinner = dinners[0]
+        if @dinner.nil?
+            redirect '/dinners'
+        end
         erb :index, :layout => :layout_with_new_dinner
     else
         redirect '/login'
@@ -168,7 +171,7 @@ def get_dinners_for_user(openid)
 end
 
 def add_dinner_for_user(user, dinner)
-    if !user.dinners.index(dinner).nil?
+    if user.dinners.empty? || user.dinners.index(dinner).nil?
         user.dinners << Dinner.create(:text => dinner)
         user.save
     end
