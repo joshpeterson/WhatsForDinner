@@ -5,23 +5,26 @@
 <meta charset=utf-8 />
 </head>
 <body>
-<h1>What's for Dinner?</h1>
+<center>
+<a href="/"><h1>What's for Dinner?</h1></a>
 
 <%= yield %>
 
 <p>Add something new:</p>
 <form action="/dinner/create" method="POST">
   <input type="text" name="text" id="text">
+  <br/>
   <input type="submit" value="Add Dinner"/>
 </form>
 
-<p>See <a href="/dinners">all</a> your dinners.</p>
+<p><a href="/dinners">All your dinners</a></p>
 
 <% if logged_in? %>
     <a href="/logout">Log out</a>
 <% else %>
     <a href="/login">Log in</a>
 <% end %>
+</center>
 </body>
 </html>
 

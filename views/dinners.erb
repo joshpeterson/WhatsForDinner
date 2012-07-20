@@ -1,12 +1,9 @@
 <h2>All Dinners:</h2>
 <% unless @dinners.empty? %>
-<ul>
 <% @dinners.each do |dinner| %>
-<li>
-<%= dinner.text %> (<a href="/dinner/<%= dinner.id %>/delete">Delete this dinner</a>)
-</li>
+<%= dinner.text %> (<a href="/dinner/<%= dinner.id %>/delete">Delete</a>)
+<br/>
 <% end %>
-</ul>
 <% else %>
 <p>No dinners! - Why not add one?</p>
 <% end %>
