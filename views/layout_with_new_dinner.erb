@@ -3,27 +3,29 @@
 <head>
 <title>What's for Dinner?</title>
 <meta charset=utf-8 />
-<link rel="stylesheet" href="style.css" type="text/css" /> 
+<link rel="stylesheet" href="/style.css" type="text/css" /> 
 </head>
 <body>
 <center>
-<a href="/"><h1>What's for Dinner?</h1></a>
 
 <%= yield %>
 
-<p>Add something new:</p>
+<p>
+<div>Add something new</div>
 <form action="/dinner/create" method="POST">
   <input type="text" name="text" id="text">
   <br/>
   <input type="submit" value="Add Dinner"/>
 </form>
+</p>
 
 <p><a href="/dinners">All your dinners</a></p>
 
+<a href='/'>Home</a> | 
 <% if logged_in? %>
-    <a href="/logout">Log out</a>
+<a href="/logout">Log out</a>
 <% else %>
-    <a href="/login">Log in</a>
+<a href="/login">Log in</a>
 <% end %>
 </center>
 </body>

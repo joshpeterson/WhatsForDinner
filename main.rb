@@ -43,20 +43,6 @@ get '/' do
     end
 end
 
-get '/not/:dinner' do
-    dinners = get_dinners_for_user(session[:user])
-    if !dinners.nil?
-        dinners = dinners.shuffle
-        @dinner = dinners[0]
-        if @dinner == Sanitize.clean(params[:dinner])
-            @dinner = dinners[1]
-        end
-        erb :index, :layout => :layout_with_new_dinner
-    else
-        redirect '/login'
-    end
-end
-
 post '/dinner/create' do
     user = get_user(session[:user])
     if !user.nil?

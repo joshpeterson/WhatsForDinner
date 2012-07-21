@@ -1,4 +1,4 @@
-<h2>All Dinners:</h2>
+<h1>All Dinners</h1>
 <% unless @dinners.empty? %>
 <% @dinners.each do |dinner| %>
 <%= dinner.text %> (<a href="/dinner/<%= dinner.id %>/delete">Delete</a>)

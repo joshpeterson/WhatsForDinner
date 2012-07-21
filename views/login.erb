@@ -6,11 +6,12 @@ function googleLogin()
 }
 </script>
 
-<p><a href="javascript: googleLogin()">Log in with Google</a></p>
+<h2><a href="javascript: googleLogin()">Log in with Google</a></h2>
+<p>or</p>
 <form name="login" class="openid_login" method="post" accept-charset="UTF-8" action='/login/openid'>
-  <label for="openid_identifier">Log in with OpenID:</label>
+  <p><label for="openid_identifier">Log in with OpenID:</label></p>
   <input type="text" name="openid_identifier" style="background: url(http://openid.net/images/login-bg.gif) no-repeat #FFF 5px; padding-left: 25px;"/>    
-  <input type="submit" value="Login" />
+  <p><input type="submit" value="Login" /></p>
 </form>
 <p><a href="http://openid.net/get/">What is OpenID?</a></p>
 
