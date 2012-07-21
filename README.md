@@ -3,8 +3,8 @@ What's for Dinner?
 
 This is a simple web application written in Ruby using
 
-* [Sinatra] (sinatrarb.com)
-* [DataMapper] (datamapper.org)
+* [Sinatra] (http://sinatrarb.com)
+* [DataMapper] (http://datamapper.org)
 
 It stores dinner suggestions provided by the user and provides random suggestions at the user's request.
 
