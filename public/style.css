@@ -7,14 +7,14 @@ body
 
 input
 {
-    font-size:75%;
+    font-size:95%;
     font-family:Verdana, Geneva, sans-serif;
 }
 
 #dinner
 {
     background-color:Gainsboro;
-    width:40%;
+    width:75%;
     padding:1em;
     -moz-border-radius: 15px;
     border-radius: 15px;
