@@ -1,35 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>What's for Dinner?</title>
-<meta charset=utf-8 />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<link rel="stylesheet" href="/style.css" type="text/css" /> 
-<link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-<center>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.ico">
 
-<%= yield %>
+    <title>What's for Dinner?</title>
 
-<p>
-<div>Try something new</div>
-<form action="/dinner/create" method="POST">
-  <input type="text" name="text" id="text">
-  <br/>
-  <input type="submit" value="Add Dinner"/>
-</form>
-</p>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<a href='/'>Home</a> | 
-<a href='/dinners'>All Dinners</a>
-<br/>
-<% if logged_in? %>
-<a href="/logout">Log out</a>
-<% else %>
-<a href="/login">Log in</a>
-<% end %>
-</center>
-</body>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/jumbtron-narrow.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/">Suggest another dinner</a></li>
+          <li><a href="/dinners">All dinners</a></li>
+          <% if logged_in? %>
+          <li><a href="/logout">Log out</a></li>
+          <% else %>
+          <li><a href="/login">Log in</a></li>
+          <% end %>
+        </ul>
+        <h3 class="text-muted">What's for dinner?</h3>
+      </div>
+
+      <div class="jumbotron text-center">
+        <%= yield %>
+      </div>
+
+      <form class="form-horizontal" role="form" action="/dinner/create" method="POST">
+          <div class="form-group">
+            <label for="text" class="col-sm-2 control-label">Try something new</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="text" id="text" placeholder="A new dinner">
+            </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Add dinner</button>
+              </div>
+          </div>
+      </form>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>How does this work?</h4>
+          <p>What's for dinner is a simple application which suggests random meals. Log in, then add a few meals. You can always add and remove meals later.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>About</h4>
+          <p>This is a an open source project powered by <a href="http://www.sinatrarb.com/">Sinatra</a>. Find out more about it on <a href="https://github.com/joshpeterson/WhatsForDinner">Github</a>. If you experience a problem with this application, please <a href="https://github.com/joshpeterson/WhatsForDinner/issues">report</a> it! Thanks.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+          <p>&copy; <a href="http://joshpeterson.github.io">Josh Peterson</a> 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
 </html>
 
