@@ -90,6 +90,10 @@ get '/dinners' do
     end
 end
 
+get '/about' do
+    erb :about, :layout => :layout_with_new_dinner
+end
+
 get '/logout' do
     session[:user] = nil
     redirect '/login'
