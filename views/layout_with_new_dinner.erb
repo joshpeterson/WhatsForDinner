@@ -41,16 +41,6 @@
 
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/">Suggest another dinner</a></li>
-          <li><a href="/dinners">All dinners</a></li>
-          <li><a href="/about">About</a></li>
-          <% if logged_in? %>
-          <li><a href="/logout">Log out</a></li>
-          <% else %>
-          <li><a href="/login">Log in</a></li>
-          <% end %>
-        </ul>
         <h3 class="text-muted">What's for dinner?</h3>
       </div>
 
@@ -71,6 +61,24 @@
               </div>
           </div>
       </form>
+
+      <div class="text-center">
+          <div>
+              <a class="btn btn-primary" href="/">Suggest another dinner</a>
+              <a class="btn btn-primary" href="/dinners">All dinners</a>
+          </div>
+          <br/>
+          <div>
+              <a class="btn btn-primary" href="/about">About</a>
+              <% if logged_in? %>
+                <a class="btn btn-primary" href="/logout">Log out</a>
+              <% else %>
+                <a class="btn btn-primary" href="/login">Log in</a>
+              <% end %>
+          </div>
+      </div>
+
+      <br/>
 
       <div class="footer text-center">
           <p>&copy; <a href="http://joshpeterson.github.io">Josh Peterson</a> 2014</p>
