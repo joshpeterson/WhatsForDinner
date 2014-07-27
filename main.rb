@@ -84,6 +84,7 @@ end
 get '/dinners' do
     @dinners = get_dinners_for_user(session[:user])
     if !@dinners.nil?
+        @dinners.sort! {|left,right| left.text <=> right.text}
         erb :dinners, :layout => :layout_with_new_dinner
     else
         redirect '/login'
